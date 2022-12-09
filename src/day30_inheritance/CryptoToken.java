@@ -18,7 +18,7 @@ public class CryptoToken {
         this.volume = volume;
         this.circulatingSupply = circulatingSupply;
         this.isMineable = isMineable;
-        totalPrice();
+
 
     }
 
@@ -26,8 +26,14 @@ public class CryptoToken {
         return price;
     }
 
-    public void setPrice(double price) {
 
+    public void setPrice(double price) {
+        if(price<=0){
+            System.err.println("Price is invalid");
+            System.exit(1);
+        }else {
+            this.price = price;
+        }
     }
 
     public int getQuantity() {
